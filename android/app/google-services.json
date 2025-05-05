@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "530303644832",
+    "project_id": "women-s-health-tracker",
+    "storage_bucket": "women-s-health-tracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530303644832:android:0af98d56f00bcf79d905c5",
+        "android_client_info": {
+          "package_name": "com.example.women_health_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxHL8Dqzu9Oh6t024iShdD8I3TT1tivmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
