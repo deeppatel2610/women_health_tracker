@@ -41,4 +41,8 @@ class FireAuth {
     User? user = _firebaseAuth.currentUser;
     return user;
   }
+
+  Future<void> logout() async {
+    await _firebaseAuth.signOut();
+  }
 }

@@ -159,7 +159,13 @@ class LoginScreen extends StatelessWidget {
                           /// todo : google auth
                           await GoogleAuth.googleAuth.signInWithGoogle();
                           User? user = FireAuth.fireAuth.currentUser();
+                          print(
+                            "deep .....................................................",
+                          );
                           if (user != null) {
+                            print(
+                              "deep .....................................................deppppppppppppppppppppppppppppppppppppp",
+                            );
                             UserModel users = UserModel(
                               userName: user.email,
                               name: user.displayName,

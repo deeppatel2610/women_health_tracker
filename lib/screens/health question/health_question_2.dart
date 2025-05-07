@@ -40,9 +40,9 @@ class HealthQuestion2 extends StatelessWidget {
                       text: "Yes😊, I am feeling better",
                       onTap: () async {
                         await FirebaseFireStoreDatabase.fireStoreDatabase
-                            .qAnsAdd(
+                            .updateData(
                               email: FireAuth.fireAuth.currentUser()!.email!,
-                              ans: "yes",
+                              data: "Yes😊, I am feeling better",
                               keyName: "ans2",
                             );
                         Get.offAll(
@@ -57,9 +57,9 @@ class HealthQuestion2 extends StatelessWidget {
                       text: "No😥, I am not feeling better",
                       onTap: () async {
                         await FirebaseFireStoreDatabase.fireStoreDatabase
-                            .qAnsAdd(
+                            .updateData(
                               email: FireAuth.fireAuth.currentUser()!.email!,
-                              ans: "no",
+                              data: "No😥, I am not feeling better",
                               keyName: "ans2",
                             );
                         Get.offAll(

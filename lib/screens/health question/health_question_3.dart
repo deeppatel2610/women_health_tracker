@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:women_health_tracker/screens/home_page.dart';
+import 'package:women_health_tracker/screens/curved%20navigation%20bar/navigation_bar.dart';
+import 'package:women_health_tracker/screens/curved%20navigation%20bar/home_page.dart';
 
 import '../../facility/firebase_auth.dart';
 import '../../facility/firebase_firestore_database.dart';
@@ -41,13 +42,13 @@ class HealthQuestion3 extends StatelessWidget {
                       text: "Yes😊, I am feeling better",
                       onTap: () async {
                         await FirebaseFireStoreDatabase.fireStoreDatabase
-                            .qAnsAdd(
+                            .updateData(
                               email: FireAuth.fireAuth.currentUser()!.email!,
-                              ans: "yes",
+                              data: "Yes😊, I am feeling better",
                               keyName: "ans3",
                             );
                         Get.offAll(
-                          HomePage(),
+                          NavigationBarBild(),
                           transition: Transition.fadeIn,
                           duration: Duration(milliseconds: 600),
                         );
@@ -58,13 +59,13 @@ class HealthQuestion3 extends StatelessWidget {
                       text: "No😥, I am not feeling better",
                       onTap: () async {
                         await FirebaseFireStoreDatabase.fireStoreDatabase
-                            .qAnsAdd(
+                            .updateData(
                               email: FireAuth.fireAuth.currentUser()!.email!,
-                              ans: "no",
+                              data: "No😥, I am not feeling better",
                               keyName: "ans3",
                             );
                         Get.offAll(
-                          HomePage(),
+                          NavigationBarBild(),
                           transition: Transition.fadeIn,
                           duration: Duration(milliseconds: 600),
                         );

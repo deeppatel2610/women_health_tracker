@@ -16,11 +16,41 @@ class FirebaseFireStoreDatabase {
         .set(UserModel.toMap(user));
   }
 
-  Future<void> qAnsAdd({
-    required String ans,
+  Future<void> updateData({
+    required String data,
     required String email,
     required String keyName,
   }) async {
-    await fireStore.collection('users').doc(email).update({keyName: ans});
+    await fireStore.collection('users').doc(email).update({keyName: data});
+  }
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> readUserFireStore({
+    required String email,
+  }) async {
+    return await fireStore.collection('users').doc(email).get();
+  }
+
+  Future<void> addEvent({
+    required String date,
+    required String email,
+    required String event,
+  }) async {
+    await fireStore
+        .collection('users')
+        .doc(email)
+        .collection("events")
+        .doc(email)
+        .set({date: event});
+  }
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> readEvent({
+    required String email,
+  }) async {
+    return await fireStore
+        .collection('users')
+        .doc(email)
+        .collection("events")
+        .doc(email)
+        .get();
   }
 }
